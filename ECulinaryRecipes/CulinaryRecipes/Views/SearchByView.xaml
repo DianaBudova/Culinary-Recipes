@@ -1,0 +1,71 @@
+﻿<Window x:Class="CulinaryRecipes.Views.SearchByView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="SearchBy" Height="450" Width="450">
+
+    <Window.Resources>
+        <Style x:Key="maxWidth" TargetType="Control">
+            <Setter Property="HorizontalAlignment"
+                        Value="Stretch"/>
+            <Setter Property="MaxWidth"
+                        Value="400"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.ColumnSpan="2">
+            <Label Content="Name"
+               Style="{StaticResource maxWidth}"/>
+            <TextBox Text="{Binding Name}"
+                 Style="{StaticResource maxWidth}"/>
+            <Label Content="Description"
+               Style="{StaticResource maxWidth}"/>
+            <TextBox Text="{Binding Description}"
+                 Style="{StaticResource maxWidth}"/>
+            <Label Content="Type"
+               Style="{StaticResource maxWidth}"/>
+            <TextBox Text="{Binding Type}"
+                 Style="{StaticResource maxWidth}"/>
+            <Label Content="Kitchen"
+               Style="{StaticResource maxWidth}"/>
+            <TextBox Text="{Binding Kitchen}"
+                 Style="{StaticResource maxWidth}"/>
+        </StackPanel>
+        
+        <Button
+                x:Name="buttonOK"
+                Grid.Column="0"
+            Grid.Row="1"
+                Margin="10"
+                Padding="70 0 70 0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Content="Search"
+                Command="{Binding Path=SearchCommand}"
+                Style="{StaticResource maxWidth}"/>
+        <Button
+                x:Name="buttonCancel"
+                Grid.Column="1"
+                Grid.Row="1"
+                Margin="10"
+                Padding="60 0 60 0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Cancel"
+                Command="{Binding Path=CancelCommand}"
+                Style="{StaticResource maxWidth}"/>
+    </Grid>
+</Window>
